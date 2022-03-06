@@ -1,0 +1,16 @@
+<scroll-view scroll-x class="bg-white nav text-center">
+  <view
+    class="cu-item {{ index == TabCur ? 'text-blue cur' : '' }}"
+    wx:for="{{ TabList }}"
+    wx:key="*this"
+    bindtap="tabSelect"
+    data-id="{{ index }}"
+  >
+  <text class="cuIcon-{{ TabIcon[index] }} {{ index == TabCur ? 'text-blue' : 'text-grey'}}"></text>  
+  {{ item }}
+  </view>
+</scroll-view>
+
+<crc8 wx:if="{{ TabCur == 0 }}"></crc8>
+<baseconver wx:if="{{ TabCur == 1 }}"></baseconver>
+<hex2string wx:if="{{ TabCur == 2 }}"></hex2string>

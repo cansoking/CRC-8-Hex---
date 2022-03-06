@@ -1,0 +1,51 @@
+<!-- 输入内容 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange '></text> 输入内容
+  </view>
+</view>
+<view class="cu-form-group">
+  <textarea maxlength="-1" bindinput="inputContent" value="{{ textcontent }}" placeholder="请输入待校验内容"></textarea>
+</view>
+<!-- 转换选项 -->
+<view class="cu-form-group margin-top">
+  <view class="title">内容格式</view>
+  <picker id="0" bindchange="PickerChange" value="{{content_mode}}" range="{{content_picker}}">
+    <view class="picker">
+      {{ content_picker[content_mode] }}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group margin-top">
+  <view class="title">多项式选择</view>
+  <picker id="1" bindchange="PickerChange" value="{{mode}}" range="{{picker}}">
+    <view class="picker">
+      {{ picker[mode] }}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">多项式POLY(Hex)</view>
+  <input disabled class="text-right" placeholder="{{ poly[mode] }}"></input>
+</view>
+<!-- 结果 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue '></text> 计算结果
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title">Hex结果：</view>
+  <input disabled value="{{ result[0] }}" placeholder="Hex"></input>
+  <button id="0" bindtap="copyResult" class="basis-xs cu-btn bg-blue shadow">复制</button>
+</view>
+<view class="cu-form-group">
+  <view class="title"> Bin 结果：</view>
+  <input disabled value="{{ result[1] }}" placeholder="Bin"></input>
+  <button id="1" bindtap="copyResult" class="basis-xs cu-btn bg-blue shadow">复制</button>
+</view>
+<!-- 按钮 -->
+<viwe class="btn-group flex flex-warp margin-top-xl">
+  <button bindtap="calculate" class="basis-sm cu-btn bg-blue light shadow lg">计算</button>
+  <button bindtap="clearContent" class="basis-sm cu-btn bg-white shadow lg">清空</button>
+</viwe>

@@ -1,0 +1,48 @@
+<!--pages/subPages/baseconver/baseconver.wxml-->
+<!-- 转换数字 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange'></text> 转换数字
+  </view>
+  <view class="action">
+    <button id="0" bindtap="copyResult" class="cu-btn bg-blue shadow" style="width: 100%;">复制</button>
+  </view>
+</view>
+<view class="cu-form-group">
+  <textarea maxlength="-1" bindinput="inputContent" value="{{ textvalue1 }}" placeholder="请输入待转换数字"></textarea>
+</view>
+<view class="cu-form-group">
+  <view class="title">进制</view>
+  <picker id="0" bindchange="PickerChange" value="{{cur1}}" range="{{jz}}">
+    <view class="picker">
+      {{ jz[cur1] }}
+    </view>
+  </picker>
+</view>
+
+<!-- 转换结果 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue'></text> 转换结果
+  </view>
+  <view class="action">
+    <button id="1" bindtap="copyResult" class="cu-btn bg-blue shadow" style="width: 100%;">复制</button>
+  </view>
+</view>
+<view class="cu-form-group">
+  <textarea maxlength="-1" value="{{ textvalue2 }}" placeholder="转换后的结果"></textarea>
+</view>
+<view class="cu-form-group">
+  <view class="title">进制</view>
+  <picker id="1" bindchange="PickerChange" value="{{cur2}}" range="{{jz}}">
+    <view class="picker">
+      {{ jz[cur2] }}
+    </view>
+  </picker>
+</view>
+
+<!-- 按钮 -->
+<viwe class="btn-group flex flex-warp margin-top-xl">
+  <button bindtap="transform" class="basis-sm cu-btn bg-blue light shadow lg">转换</button>
+  <button bindtap="clearContent" class="basis-sm cu-btn bg-white shadow lg">清空</button>
+</viwe>

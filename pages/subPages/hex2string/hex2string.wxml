@@ -1,0 +1,49 @@
+<!-- 转换数据 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange'></text> 待转换
+  </view>
+  <view class="action">
+    <button id="0" bindtap="copyResult" class="cu-btn bg-blue shadow" style="width: 100%;">复制</button>
+  </view>
+</view>
+<view class="cu-form-group">
+  <textarea maxlength="-1" bindinput="inputContent" value="{{ textvalue1 }}" placeholder="请输入待转换数据"></textarea>
+</view>
+<view class="cu-form-group">
+  <view class="title">数据类型</view>
+  <view>
+    <radio-group id="0" bindchange="radioChange" class="block">
+      <radio value="0" checked="{{ cur1==0?'checked':'' }}" class="blue radio"></radio> String
+      <radio value="1" checked="{{ cur1==1?'checked':'' }}" class="blue radio margin-left-sm"></radio> Hex
+    </radio-group>
+  </view>
+</view>
+
+<!-- 转换结果 -->
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class='action'>
+    <text class='cuIcon-titles text-blue'></text> 转换结果
+  </view>
+  <view class="action">
+    <button id="1" bindtap="copyResult" class="cu-btn bg-blue shadow" style="width: 100%;">复制</button>
+  </view>
+</view>
+<view class="cu-form-group">
+  <textarea maxlength="-1" value="{{ textvalue2 }}" placeholder="转换后的结果"></textarea>
+</view>
+<view class="cu-form-group">
+  <view class="title">数据类型</view>
+  <view>
+    <radio-group class="block">
+      <radio disabled="{{cur1==0?'true':''}}" checked="{{ cur2==0?'checked':'' }}" class="blue radio"></radio> String
+      <radio disabled="{{cur1==1?'true':''}}" checked="{{ cur2==1?'checked':'' }}" class="blue radio margin-left-sm"></radio> Hex
+    </radio-group>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<viwe class="btn-group flex flex-warp margin-top-xl">
+  <button bindtap="transform" class="basis-sm cu-btn bg-blue light shadow lg">转换</button>
+  <button bindtap="clearContent" class="basis-sm cu-btn bg-white shadow lg">清空</button>
+</viwe>

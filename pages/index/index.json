@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "crc8": "/pages/subPages/crc8/crc8",
+    "baseconver": "/pages/subPages/baseconver/baseconver",
+    "hex2string": "/pages/subPages/hex2string/hex2string"
+  }
+}
